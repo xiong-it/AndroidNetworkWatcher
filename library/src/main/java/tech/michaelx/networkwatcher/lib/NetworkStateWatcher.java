@@ -67,7 +67,7 @@ public final class NetworkStateWatcher {
      *
      * @param observer 观察者
      */
-    public void register(Object observer) {
+    public void registerObserver(Object observer) {
         if (mObservers == null) {
             synchronized (NetworkStateWatcher.class) {
                 mObservers = new ArrayList<>();

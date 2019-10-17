@@ -22,7 +22,7 @@ public class OtherActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        NetworkStateWatcher.getDefault().register(OtherActivity.this);
+        NetworkStateWatcher.getDefault().registerObserver(OtherActivity.this);
     }
 
     @Override

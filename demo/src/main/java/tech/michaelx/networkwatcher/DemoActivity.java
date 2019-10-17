@@ -26,18 +26,21 @@ public class DemoActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        NetworkStateWatcher.getDefault().register(DemoActivity.this);
+        // 注册网络监听
+        NetworkStateWatcher.getDefault().registerObserver(DemoActivity.this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        // 注销网络监听
         NetworkStateWatcher.getDefault().unRegisterObserver(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        // 在app主界面/栈中最后一个Activity停止网络监听
         NetworkStateWatcher.getDefault().stopWatch();
     }
 
